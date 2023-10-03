@@ -1,3 +1,5 @@
+import { theme } from ".";
+
 export const componentsStyle = () => {
   return {
     MuiButton: {
