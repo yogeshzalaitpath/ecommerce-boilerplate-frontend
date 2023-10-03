@@ -1,7 +1,5 @@
-import React from 'react'
+import React, { Fragment } from "react";
 
 export default function Button() {
-  return (
-    <>Button</>
-  )
+  return <Fragment>Button</Fragment>;
 }
