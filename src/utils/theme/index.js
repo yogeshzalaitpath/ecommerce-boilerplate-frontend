@@ -4,8 +4,12 @@ import { palette } from "./palette";
 import { typography } from "./typography";
 import { componentsStyle } from "./components-style";
 
-export const theme = createTheme({
+const themeConfig = createTheme({
   palette,
   typography,
-  components: componentsStyle(),
 });
+
+export const theme = {
+  ...themeConfig,
+  components: componentsStyle(themeConfig),
+};

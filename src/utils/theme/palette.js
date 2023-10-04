@@ -18,7 +18,6 @@ export const palette = {
   success: {
     main: "rgb(38,191,148)",
   },
-  contrastThreshold: 1.6,
   background: {
     default: "rgb(240,241,247)",
   },
