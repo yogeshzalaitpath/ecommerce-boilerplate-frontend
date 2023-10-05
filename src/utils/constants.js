@@ -4,13 +4,13 @@ export const MENUITEMS = [
   {
     id: 1,
     label: "Users",
-    icon: <ICONS.user />,
-    path: "/admin/user", 
+    icon: <ICONS.users />,
+    path: "/admin/users",
   },
   {
     id: 2,
     label: "Products",
-    icon: <ICONS.product />,
-    path: "/admin/product", 
+    icon: <ICONS.products />,
+    path: "/admin/products",
   },
 ];
