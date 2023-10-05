@@ -24,7 +24,7 @@ export const palette = {
   drawer: {
     default: "#111c43",
   },
-  menutext:{
+  menutext: {
     default: "rgba(255,255,255,0.6)",
-  }
+  },
 };
