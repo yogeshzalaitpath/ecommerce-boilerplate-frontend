@@ -54,5 +54,15 @@ export const componentsStyle = (theme) => {
         },
       },
     },
+
+    MuiInputBase: {
+      styleOverrides: {
+        input: {
+          "&::placeholder": {
+            fontSize: "0.875rem",
+          },
+        },
+      },
+    },
   };
 };

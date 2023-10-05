@@ -1,6 +1,6 @@
 import { ICONS } from "@/assets";
 
-export const DRAWERWIDTH = 240
+export const DRAWERWIDTH = 240;
 
 export const MENUITEMS = [
   {
@@ -15,4 +15,14 @@ export const MENUITEMS = [
     icon: <ICONS.products />,
     path: "/admin/products",
   },
+];
+
+export const ROLES = {
+  ADMIN: "admin",
+  USER: "user",
+};
+
+export const ROLESLIST = [
+  { id: 1, title: "Admin", value: ROLES.ADMIN },
+  { id: 2, title: "User", value: ROLES.USER },
 ];

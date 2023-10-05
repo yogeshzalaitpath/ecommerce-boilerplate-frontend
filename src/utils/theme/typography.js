@@ -13,9 +13,12 @@ export const typography = {
   },
   h5: {
     overflowWrap: "break-word",
+    fontSize: '1.25rem',
+    fontWeight: 600
   },
   h6: {
     overflowWrap: "break-word",
+
   },
   subtitle1: {
     overflowWrap: "break-word",

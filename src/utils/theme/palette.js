@@ -22,6 +22,9 @@ export const palette = {
     bg: "#111c43",
     text: "#a3aed1",
   },
+  grey: {
+    main: "rgb(240,241,247)",
+  },
   background: {
     default: "#f0f1f7",
   },
