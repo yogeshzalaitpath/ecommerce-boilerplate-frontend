@@ -1,10 +1,10 @@
 import React, { Fragment } from "react";
+import Dashboard from "./dashhboard";
 
 export default function AdminLayout({ children }) {
   return (
     <Fragment>
-      <h1>AdminLayout</h1>
-      {children}
+      <Dashboard>{children}</Dashboard>
     </Fragment>
   );
 }

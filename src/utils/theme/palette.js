@@ -21,4 +21,10 @@ export const palette = {
   background: {
     default: "rgb(240,241,247)",
   },
+  drawer: {
+    default: "#111c43",
+  },
+  menutext:{
+    default: "rgba(255,255,255,0.6)",
+  }
 };
