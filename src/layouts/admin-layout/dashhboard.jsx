@@ -17,14 +17,12 @@ import MailIcon from "@mui/icons-material/Mail";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import { MENUITEMS } from "@/utils/constants";
+import { DRAWERWIDTH, MENUITEMS } from "@/utils/constants";
 import { useTheme } from "@mui/material/styles";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ICONS, IMAGES } from "@/assets";
 import { Avatar } from "@mui/material";
-
-const drawerWidth = 240;
 
 function Dashboard({ children, ...props }) {
   const pathname = usePathname();
@@ -40,23 +38,20 @@ function Dashboard({ children, ...props }) {
     <div>
       <Toolbar />
       <Divider />
-      <List sx={{ color: theme.palette.menutext.default }}>
+      <List>
         {MENUITEMS.map(({ id, label, icon, path }) => {
-          const isActive = pathname === path;
           return (
-            <Link href={path} key={id}>
-              <ListItem key={id}>
-                <ListItemButton className={isActive ? "active" : ""}>
-                  <ListItemIcon
-                    sx={{
-                      color: isActive
-                        ? theme.components.MuiListItemButton.styleOverrides
-                            .root["&.active"].color
-                        : theme.palette.menutext.default,
-                    }}
-                  >
-                    {icon}
-                  </ListItemIcon>
+            <Link href={path} key={id} sx={{ py: { sm: 0.5, md: 0.5 } }}>
+              <ListItem
+                key={id}
+                sx={{
+                  display: "block",
+                  px: { sm: 1.5, md: 1.5 },
+                  py: { sm: 0.5, md: 0.5 },
+                }}
+              >
+                <ListItemButton selected={pathname === path}>
+                  <ListItemIcon>{icon}</ListItemIcon>
                   <ListItemText primary={label} />
                 </ListItemButton>
               </ListItem>
@@ -76,9 +71,8 @@ function Dashboard({ children, ...props }) {
       <AppBar
         position="fixed"
         sx={{
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
-          ml: { sm: `${drawerWidth}px` },
-          backgroundColor: theme.palette.common.white,
+          width: { sm: `calc(100% - ${DRAWERWIDTH}px)` },
+          ml: { sm: `${DRAWERWIDTH}px` },
         }}
       >
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
@@ -93,15 +87,9 @@ function Dashboard({ children, ...props }) {
               <MenuIcon sx={{ color: "black" }} />
             </IconButton>
           </div>
-          <Box
-            sx={{ display: "flex", alignItems: "center", marginLeft: "10px" }}
-          >
-            <Avatar
-              alt="Profile"
-              src={IMAGES.avatar.src}
-              sx={{ width: 40, height: 40, margin: "10px" }}
-            />
-            <Typography sx={{ color: theme.palette.common.black }}>
+          <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+            <Avatar alt="Aayushi Shah" src="" sx={{ width: 38, height: 38 }}>A</Avatar>
+            <Typography variant="subtitle2">
               Aayushi Shah
             </Typography>
           </Box>
@@ -109,7 +97,7 @@ function Dashboard({ children, ...props }) {
       </AppBar>
       <Box
         component="nav"
-        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+        sx={{ width: { sm: DRAWERWIDTH }, flexShrink: { sm: 0 } }}
         aria-label="mailbox folders"
       >
         <Drawer
@@ -124,8 +112,7 @@ function Dashboard({ children, ...props }) {
             display: { xs: "block", sm: "none" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
-              width: drawerWidth,
-              backgroundColor: theme.palette.drawer.default,
+              width: DRAWERWIDTH,
             },
           }}
         >
@@ -137,8 +124,7 @@ function Dashboard({ children, ...props }) {
             display: { xs: "none", sm: "block" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
-              width: drawerWidth,
-              backgroundColor: theme.palette.drawer.default,
+              width: DRAWERWIDTH,
             },
           }}
           open
@@ -151,7 +137,7 @@ function Dashboard({ children, ...props }) {
         sx={{
           flexGrow: 1,
           p: 3,
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
+          width: { sm: `calc(100% - ${DRAWERWIDTH}px)` },
         }}
       >
         <Toolbar />

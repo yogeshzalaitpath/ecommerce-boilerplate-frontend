@@ -1,5 +1,7 @@
 import { ICONS } from "@/assets";
 
+export const DRAWERWIDTH = 240
+
 export const MENUITEMS = [
   {
     id: 1,

@@ -12,24 +12,45 @@ export const componentsStyle = (theme) => {
         },
       },
     },
-    MuiListItemButton: {
+    MuiDrawer: {
       styleOverrides: {
         root: {
-          borderRadius: 6,
-          "&:hover": {
+          ".Mui-selected": {
             backgroundColor: "rgba(255,255,255,.05)",
             color: theme.palette.common.white,
           },
-          "&.active": {
-            backgroundColor: "rgba(255,255,255,.05)",
-            color: theme.palette.common.white,
+          ".MuiListItemButton-root": {
+            color:theme.palette.common.white,
+            borderRadius: 6,
+            "&:hover": {
+              backgroundColor: "rgba(255,255,255,.05)",
+              color: theme.palette.common.white,
+            },
+
+            span: {
+              fontSize: 15,
+            },
+            ".MuiListItemIcon-root": {
+              minWidth: "35px",
+              color:theme.palette.common.white,
+              "&:hover": {
+                backgroundColor: "rgba(255,255,255,.05)",
+                color: theme.palette.common.white,
+              },
+            },
           },
-          span: {
-            fontSize: 15,
-          },
-          ".MuiListItemIcon-root": {
-            minWidth: "43px",
-          },
+        },
+        paper: {
+          backgroundColor: theme.palette.drawer.bg,
+        },
+      },
+    },
+    MuiAppBar: {
+      styleOverrides: {
+        root: {
+          backgroundColor: theme.palette.common.white,
+          boxShadow: theme.shadows[0],
+          color: theme.palette.common.black,
         },
       },
     },
