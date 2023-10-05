@@ -1,5 +1,5 @@
-import PlainLayout from "@/layouts/plain-layout";
+import AuthLayout from "@/layouts/auth-layout";
 
 export default function Layout({ children }) {
-  return <PlainLayout>{children}</PlainLayout>;
+  return <AuthLayout>{children}</AuthLayout>;
 }
