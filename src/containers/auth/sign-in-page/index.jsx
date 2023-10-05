@@ -12,7 +12,7 @@ export default function LoginPage() {
     <Fragment>
       <Container maxWidth="xs">
         <Box>
-          <ICONS.Shoppingbag color="primary"></ICONS.Shoppingbag>
+          <ICONS.Shoppingbag color="primary" />
           <Typography variant="h5" sx={{ marginY: "10px" }}>
             Sign In
           </Typography>
@@ -31,7 +31,13 @@ export default function LoginPage() {
             />
           </Stack>
           <Stack sx={{ marginTop: "20px" }}>
-            <CommonButton title="Sign In" size="large" width="100%" />
+            <CommonButton
+              title="Sign In"
+              size="large"
+              width="100%"
+              // disabled={true}
+              // loading={true}
+            />
           </Stack>
           <Box
             sx={{
