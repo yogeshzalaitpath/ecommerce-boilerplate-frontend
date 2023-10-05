@@ -11,19 +11,18 @@ export default function LoginPage() {
   return (
     <Fragment>
       <Container maxWidth="xs">
-        <Box>
+        <Box sx={{ display: "flex", flexDirection: "column", gap: 1.5 }}>
           <ICONS.Shoppingbag color="primary" />
-          <Typography variant="h5" sx={{ marginY: "10px" }}>
-            Sign In
-          </Typography>
-          <Typography variant="subtitle2" sx={{ marginBottom: "10px" }}>
-            Welcome back Jhon !
-          </Typography>
+          <Typography variant="h5">Sign In</Typography>
+          <Typography variant="subtitle2">Welcome back Jhon !</Typography>
         </Box>
 
         <Box sx={{ width: "100%", marginTop: "20px" }}>
           <Stack spacing={1}>
-            <CommonInput placeholder="User Name" title="User Name" />
+            <CommonInput
+              placeholder="User Name"
+              title="User Name"
+            />
             <CommonInput
               placeholder="Password"
               title="Password"

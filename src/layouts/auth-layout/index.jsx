@@ -5,7 +5,6 @@ import { IMAGES } from "@/assets";
 
 export default function AuthLayout({ children }) {
   return (
-    
     <Fragment>
       <Grid container minHeight="100vh">
         <Grid
@@ -27,7 +26,7 @@ export default function AuthLayout({ children }) {
               src={IMAGES.authside}
               alt="Description"
               layout="fill"
-              objectFit="cover"
+              style={{ objectFit: "cover", height: "100%", width: "100%" }}
             />
           </div>
         </Grid>
