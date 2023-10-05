@@ -7,13 +7,12 @@ import { ICONS } from "@/assets";
 import Stack from "@mui/material/Stack";
 import { useRouter } from "next/navigation";
 
-export default function RegisterPage() {
+export default function SignUpPage() {
   const { push } = useRouter();
   return (
     <Fragment>
       <Container maxWidth="xs">
         <Box>
-          <ICONS.Shoppingbag color="primary"></ICONS.Shoppingbag>
           <Typography variant="h5" sx={{ marginY: "10px" }}>
             Sign Up
           </Typography>
@@ -67,3 +66,4 @@ export default function RegisterPage() {
     </Fragment>
   );
 }
+
