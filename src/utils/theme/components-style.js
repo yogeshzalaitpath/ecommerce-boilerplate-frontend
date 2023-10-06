@@ -7,36 +7,41 @@ export const componentsStyle = (theme) => {
           borderRadius: 6,
           color: theme.palette.common.white,
         },
-        text: {
-          color: "red",
-        },
       },
     },
     MuiDrawer: {
       styleOverrides: {
         root: {
-          ".Mui-selected": {
+          ".MuiListItemButton-root.Mui-selected": {
             backgroundColor: "rgba(255,255,255,.05)",
             color: theme.palette.common.white,
-          },
-          ".MuiListItemButton-root": {
-            color:theme.palette.common.white,
-            borderRadius: 6,
-            "&:hover": {
-              backgroundColor: "rgba(255,255,255,.05)",
+            ".MuiSvgIcon-root": {
               color: theme.palette.common.white,
             },
-
-            span: {
+            "&:hover": {
+              backgroundColor: "rgba(255,255,255,.05)",
+            },
+          },
+          ".MuiListItemButton-root": {
+            color: theme.palette.drawer.text,
+            borderRadius: 8,
+            padding: "5px 14px",
+            ".MuiTypography-root": {
               fontSize: 15,
             },
-            ".MuiListItemIcon-root": {
-              minWidth: "35px",
-              color:theme.palette.common.white,
-              "&:hover": {
-                backgroundColor: "rgba(255,255,255,.05)",
+            ".MuiSvgIcon-root": {
+              fontSize: 20,
+              color: theme.palette.drawer.text,
+            },
+            "&:hover": {
+              color: theme.palette.common.white,
+              backgroundColor: "rgba(255,255,255,.05)",
+              ".MuiSvgIcon-root": {
                 color: theme.palette.common.white,
               },
+            },
+            ".MuiListItemIcon-root": {
+              minWidth: "30px",
             },
           },
         },
@@ -54,7 +59,6 @@ export const componentsStyle = (theme) => {
         },
       },
     },
-
     MuiInputBase: {
       styleOverrides: {
         input: {

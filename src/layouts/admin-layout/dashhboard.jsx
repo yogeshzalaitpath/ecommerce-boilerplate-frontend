@@ -7,26 +7,22 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import MailIcon from "@mui/icons-material/Mail";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import { DRAWERWIDTH, MENUITEMS } from "@/utils/constants";
-import { useTheme } from "@mui/material/styles";
+import { DRAWERWIDTH } from "@/utils/constants";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ICONS, IMAGES } from "@/assets";
 import { Avatar } from "@mui/material";
+import { MENUITEMS } from "@/utils/urls";
 
 function Dashboard({ children, ...props }) {
   const pathname = usePathname();
-  const theme = useTheme();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -88,10 +84,10 @@ function Dashboard({ children, ...props }) {
             </IconButton>
           </div>
           <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-            <Avatar alt="Aayushi Shah" src="" sx={{ width: 38, height: 38 }}>A</Avatar>
-            <Typography variant="subtitle2">
-              Aayushi Shah
-            </Typography>
+            <Avatar alt="User name" src="" sx={{ width: 38, height: 38 }}>
+              U
+            </Avatar>
+            <Typography variant="subtitle2">User Name</Typography>
           </Box>
         </Toolbar>
       </AppBar>
