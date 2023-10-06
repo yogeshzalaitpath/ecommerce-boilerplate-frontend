@@ -142,20 +142,23 @@ export default function MainPage() {
               </Box>
 
               {/* <Search> */}
-                {/* <SearchIcon /> */}
-                <CommonInput
-                  // size="small"
-                  placeholder="Search…"
-                  // variant="standard"
-                  fullWidth
-                  sx={{ width: { xs: "100%", md: "600px" } }}
-                  // inputProps={{ "aria-label": "search" }}
-                  // InputProps={{ disableUnderline: true }}
-                  InputProps={{
-                    startAdornment: <InputAdornment position="start"><SearchIcon color="primary"/></InputAdornment>,
-                  }}
-        
-                />
+              {/* <SearchIcon /> */}
+              <CommonInput
+                // size="small"
+                placeholder="Search…"
+                // variant="standard"
+                fullWidth
+                sx={{ width: { xs: "100%", md: "600px" } }}
+                // inputProps={{ "aria-label": "search" }}
+                // InputProps={{ disableUnderline: true }}
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <SearchIcon color="primary" />
+                    </InputAdornment>
+                  ),
+                }}
+              />
               {/* </Search> */}
               <Box sx={{ flexGrow: 1 }} />
               <Box
