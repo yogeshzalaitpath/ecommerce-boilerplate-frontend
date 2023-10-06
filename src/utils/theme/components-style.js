@@ -9,7 +9,15 @@ export const componentsStyle = (theme) => {
         },
       },
     },
-
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          ".MuiFormHelperText-root": {
+            marginLeft: "0px",
+          },
+        },
+      },
+    },
     MuiInputBase: {
       styleOverrides: {
         input: {

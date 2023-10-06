@@ -18,7 +18,6 @@ export const typography = {
   },
   h6: {
     overflowWrap: "break-word",
-
   },
   subtitle1: {
     overflowWrap: "break-word",

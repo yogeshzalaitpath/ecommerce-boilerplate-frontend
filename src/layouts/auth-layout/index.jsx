@@ -23,7 +23,7 @@ export default function AuthLayout({ children }) {
             }}
           >
             <Image
-              src={IMAGES.authside}
+              src={IMAGES.authcover}
               alt="Description"
               layout="fill"
               style={{ objectFit: "cover", height: "100%", width: "100%" }}
