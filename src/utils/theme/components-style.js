@@ -68,5 +68,14 @@ export const componentsStyle = (theme) => {
         },
       },
     },
+    MuiAppBar: {
+      styleOverrides: {
+        root: {
+          backgroundColor: theme.palette.common.white,
+          boxShadow: theme.shadows[0],
+          color: theme.palette.common.black,
+        },
+      },
+    },
   };
 };

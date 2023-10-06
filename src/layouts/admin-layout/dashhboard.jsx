@@ -91,7 +91,8 @@ function Dashboard({ children, ...props }) {
           </Box>
         </Toolbar>
       </AppBar>
-      <Box
+
+ <Box
         component="nav"
         sx={{ width: { sm: DRAWERWIDTH }, flexShrink: { sm: 0 } }}
         aria-label="mailbox folders"
