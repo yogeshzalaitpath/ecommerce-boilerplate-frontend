@@ -1,52 +1,64 @@
 "use client";
 import * as React from "react";
 import PropTypes from "prop-types";
-import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
-import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import { DRAWERWIDTH } from "@/utils/constants";
+import { DRAWER_WIDTH } from "@/utils/constants";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Avatar } from "@mui/material";
 import { MENUITEMS } from "@/utils/urls";
+import Logo from "@/components/logo";
+import { useTheme } from "@mui/material/styles";
 
-function Dashboard({ children, ...props }) {
+function SideBar({ mobileOpen, setMobileOpen, ...props }) {
   const pathname = usePathname();
+  const theme = useTheme();
   const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
 
   const drawer = (
-    <div>
-      <Toolbar />
+    <Box>
+      <Toolbar
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Logo
+          logoSize="30px"
+          primaryColor={theme.palette.primary.light}
+          secondaryColor={theme.palette.common.white}
+        />
+      </Toolbar>
       <Divider />
       <List>
         {MENUITEMS.map(({ id, label, icon, path }) => {
           return (
-            <Link href={path} key={id} sx={{ py: { sm: 0.5, md: 0.5 } }}>
+            <Link href={path} key={id} sx={{ py: { xs: 0.5, sm: 0.5 } }}>
               <ListItem
                 key={id}
                 sx={{
                   display: "block",
-                  px: { sm: 1.5, md: 1.5 },
-                  py: { sm: 0.5, md: 0.5 },
+                  px: { xs: 1.5, sm: 1.5 },
+                  py: { xs: 0.5, sm: 0.5 },
                 }}
               >
-                <ListItemButton selected={pathname === path}>
+                <ListItemButton
+                  selected={pathname === path}
+                  onClick={handleDrawerToggle}
+                >
                   <ListItemIcon>{icon}</ListItemIcon>
                   <ListItemText primary={label} />
                 </ListItemButton>
@@ -55,46 +67,18 @@ function Dashboard({ children, ...props }) {
           );
         })}
       </List>
-    </div>
+    </Box>
   );
 
   const container =
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <React.Fragment>
       <CssBaseline />
-      <AppBar
-        position="fixed"
-        sx={{
-          width: { sm: `calc(100% - ${DRAWERWIDTH}px)` },
-          ml: { sm: `${DRAWERWIDTH}px` },
-        }}
-      >
-        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-          <div>
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              edge="start"
-              onClick={handleDrawerToggle}
-              sx={{ mr: 2, display: { sm: "none" } }}
-            >
-              <MenuIcon sx={{ color: "black" }} />
-            </IconButton>
-          </div>
-          <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-            <Avatar alt="User name" src="" sx={{ width: 38, height: 38 }}>
-              U
-            </Avatar>
-            <Typography variant="subtitle2">User Name</Typography>
-          </Box>
-        </Toolbar>
-      </AppBar>
-
- <Box
+      <Box
         component="nav"
-        sx={{ width: { sm: DRAWERWIDTH }, flexShrink: { sm: 0 } }}
+        sx={{ width: { sm: DRAWER_WIDTH }, flexShrink: { sm: 0 } }}
         aria-label="mailbox folders"
       >
         <Drawer
@@ -109,7 +93,7 @@ function Dashboard({ children, ...props }) {
             display: { xs: "block", sm: "none" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
-              width: DRAWERWIDTH,
+              width: DRAWER_WIDTH,
             },
           }}
         >
@@ -121,7 +105,7 @@ function Dashboard({ children, ...props }) {
             display: { xs: "none", sm: "block" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
-              width: DRAWERWIDTH,
+              width: DRAWER_WIDTH,
             },
           }}
           open
@@ -129,23 +113,12 @@ function Dashboard({ children, ...props }) {
           {drawer}
         </Drawer>
       </Box>
-      <Box
-        component="main"
-        sx={{
-          flexGrow: 1,
-          p: 3,
-          width: { sm: `calc(100% - ${DRAWERWIDTH}px)` },
-        }}
-      >
-        <Toolbar />
-        {children}
-      </Box>
-    </Box>
+    </React.Fragment>
   );
 }
 
-Dashboard.propTypes = {
+SideBar.propTypes = {
   window: PropTypes.func,
 };
 
-export default Dashboard;
+export default SideBar;

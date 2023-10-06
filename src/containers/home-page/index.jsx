@@ -69,7 +69,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function MainPage() {
+export default function HomePage() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -135,7 +135,7 @@ export default function MainPage() {
             <Toolbar>
               <Box>
                 <img
-                  src={IMAGES.logo.src}
+                  src={IMAGES.logo}
                   alt="image"
                   style={{ width: "70px", height: "auto" }}
                 />

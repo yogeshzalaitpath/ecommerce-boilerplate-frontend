@@ -1,3 +1,5 @@
+import { HEADER_HEIGHT } from "../constants";
+
 export const componentsStyle = (theme) => {
   return {
     MuiButton: {
@@ -56,6 +58,9 @@ export const componentsStyle = (theme) => {
           backgroundColor: theme.palette.common.white,
           boxShadow: theme.shadows[0],
           color: theme.palette.common.black,
+          ".MuiToolbar-root": {
+            minHeight: HEADER_HEIGHT,
+          },
         },
       },
     },
@@ -65,15 +70,6 @@ export const componentsStyle = (theme) => {
           "&::placeholder": {
             fontSize: "0.875rem",
           },
-        },
-      },
-    },
-    MuiAppBar: {
-      styleOverrides: {
-        root: {
-          backgroundColor: theme.palette.common.white,
-          boxShadow: theme.shadows[0],
-          color: theme.palette.common.black,
         },
       },
     },
