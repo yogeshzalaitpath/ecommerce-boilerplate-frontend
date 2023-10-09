@@ -24,7 +24,7 @@ export default function Logo({
           fontWeight={600}
           sx={{ color: secondaryColor, fontSize: fontSize }}
         >
-          commerce
+          -commerce
         </Typography>
       </Box>
     </Box>
