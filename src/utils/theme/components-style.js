@@ -46,6 +46,9 @@ export const componentsStyle = (theme) => {
               minWidth: "30px",
             },
           },
+          ".MuiToolbar-root": {
+            minHeight: HEADER_HEIGHT,
+          },
         },
         paper: {
           backgroundColor: theme.palette.drawer.bg,

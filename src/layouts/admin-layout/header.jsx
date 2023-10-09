@@ -45,7 +45,24 @@ export default function Header({ mobileOpen, setMobileOpen }) {
           <Avatar alt="User name" src="" sx={{ width: 38, height: 38 }}>
             U
           </Avatar>
-          <Typography variant="subtitle2">User Name</Typography>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+            }}
+          >
+            <Typography
+              variant="subtitle2"
+              fontWeight={600}
+              sx={{ lineHeight: "20px" }}
+            >
+              User Name
+            </Typography>
+            <Typography variant="caption" sx={{ lineHeight: "20px" }}>
+              username@gmail.com
+            </Typography>
+          </Box>
         </Box>
       </Toolbar>
     </AppBar>
