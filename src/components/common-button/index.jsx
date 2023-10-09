@@ -18,13 +18,6 @@ const CommonButton = ({
       variant={variant}
       color={color}
       size={size}
-      // startIcon={
-      //   loading ? (
-      //     <CircularProgress color="primary" size={20} thickness={5} />
-      //   ) : (
-      //     startIcon
-      //   )
-      // }
       endIcon={
         loading ? (
           <CircularProgress color="primary" size={20} thickness={5} />

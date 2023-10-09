@@ -1,6 +1,6 @@
 import React from "react";
-import RegisterPage from "@/containers/auth/sign-up-page";
+import SignUpPage from "@/containers/auth/sign-up-page";
 
 export default function Page() {
-  return <RegisterPage />;
+  return <SignUpPage />;
 }

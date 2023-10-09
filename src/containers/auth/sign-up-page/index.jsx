@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import SignUpForm from "./components/sign-up-form";
 import { Urls } from "@/utils/urls";
 
-export default function RegisterPage() {
+export default function SignUpPage() {
   const { push } = useRouter();
   return (
     <Fragment>
@@ -56,3 +56,4 @@ export default function RegisterPage() {
     </Fragment>
   );
 }
+

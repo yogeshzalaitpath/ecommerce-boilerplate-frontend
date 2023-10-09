@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import SignInForm from "./components/sign-in-form";
 import { Urls } from "@/utils/urls";
 
-export default function LoginPage() {
+export default function SignInPage() {
   const { push } = useRouter();
   return (
     <Fragment>

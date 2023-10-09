@@ -1,27 +1,31 @@
 export const palette = {
   mode: "light",
   primary: {
-    main: "rgb(132, 90, 223)",
+    main: "#845adf",
   },
   secondary: {
-    main: "rgb(35,183,229)",
+    main: "#23b7e5",
   },
   error: {
-    main: "rgb(230,83,60)",
+    main: "#e6533c",
   },
   warning: {
-    main: "rgb(245,184,73)",
+    main: "#f5b849",
   },
   info: {
-    main: "rgb(73,182,245)",
+    main: "#49b6f5",
   },
   success: {
-    main: "rgb(38,191,148)",
+    main: "#26bf94",
+  },
+  drawer: {
+    bg: "#111c43",
+    text: "#a3aed1",
   },
   grey: {
     main: "rgb(240,241,247)",
   },
   background: {
-    default: "rgb(240,241,247)",
+    default: "#f0f1f7",
   },
 };
