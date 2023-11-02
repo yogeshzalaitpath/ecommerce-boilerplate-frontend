@@ -20,7 +20,7 @@ const CommonButton = ({
       size={size}
       endIcon={
         loading ? (
-          <CircularProgress color="primary" size={20} thickness={5} />
+          <CircularProgress color="primary" size={18} thickness={5} />
         ) : (
           endIcon
         )

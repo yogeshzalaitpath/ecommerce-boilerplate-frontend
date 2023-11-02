@@ -134,11 +134,11 @@ export default function HomePage() {
           <AppBar position="static">
             <Toolbar>
               <Box>
-                <img
+                {/* <img
                   src={IMAGES.logo}
                   alt="image"
                   style={{ width: "70px", height: "auto" }}
-                />
+                /> */}
               </Box>
 
               {/* <Search> */}

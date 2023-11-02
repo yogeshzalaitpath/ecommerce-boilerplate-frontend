@@ -34,13 +34,16 @@ export default function SignInPage() {
                 gap: 0.5,
               }}
             >
-              <Typography variant="subtitle2">Don&apos;t have an account?</Typography>
+              <Typography variant="subtitle2">
+                Don&apos;t have an account?
+              </Typography>
               <Typography
                 variant="subtitle2"
                 color="primary"
                 onClick={() => {
                   push(Urls.SignUp.url);
                 }}
+                sx={{ cursor: "pointer" }}
               >
                 Sign up
               </Typography>

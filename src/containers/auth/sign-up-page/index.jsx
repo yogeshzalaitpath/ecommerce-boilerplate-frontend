@@ -13,7 +13,6 @@ export default function SignUpPage() {
       <Container maxWidth="xs">
         <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
           <Box sx={{ display: "flex", flexDirection: "column", gap: 0.5 }}>
-            {/* <ICONS.Shoppingbag color="primary"></ICONS.Shoppingbag> */}
             <Typography variant="h5">Sign Up</Typography>
             <Typography variant="subtitle2">
               Welcome & Join us by creating a free account !
@@ -46,6 +45,7 @@ export default function SignUpPage() {
                 onClick={() => {
                   push(Urls.SignIn.url);
                 }}
+                sx={{ cursor: "pointer" }}
               >
                 Sign in
               </Typography>
@@ -56,4 +56,3 @@ export default function SignUpPage() {
     </Fragment>
   );
 }
-

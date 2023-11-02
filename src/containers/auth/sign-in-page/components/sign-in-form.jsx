@@ -1,6 +1,6 @@
 import CommonButton from "@/components/common-button";
 import CommonInput from "@/components/common-input";
-import { signinValidation } from "@/utils/validation";
+import { signInValidation } from "@/utils/validations";
 import { Stack } from "@mui/material";
 import { useFormik } from "formik";
 import React, { Fragment } from "react";
@@ -20,7 +20,7 @@ const SignInForm = () => {
       email: "",
       password: "",
     },
-    validationSchema: signinValidation,
+    validationSchema: signInValidation,
     onSubmit: async (values) => {
       try {
         setLoading(true);

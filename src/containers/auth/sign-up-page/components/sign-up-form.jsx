@@ -4,7 +4,8 @@ import CommonSelect from "@/components/common-select";
 import { Stack } from "@mui/material";
 import React, { Fragment } from "react";
 import { useFormik } from "formik";
-import { signupValidation } from "@/utils/validation";
+import { signUpValidation } from "@/utils/validations";
+import { ROLES_LIST } from "@/utils/constants";
 
 const SignUpForm = () => {
   const {
@@ -14,7 +15,6 @@ const SignUpForm = () => {
     handleBlur,
     values,
     errors,
-    isValidating,
     resetForm,
   } = useFormik({
     initialValues: {
@@ -25,7 +25,7 @@ const SignUpForm = () => {
       confirm_password: "",
       role: "",
     },
-    validationSchema: signupValidation,
+    validationSchema: signUpValidation,
     onSubmit: async (values) => {
       try {
         setLoading(true);
@@ -40,78 +40,76 @@ const SignUpForm = () => {
     },
   });
 
-  const handleSignup = () => {
-    if (!isValidating) {
-      handleSubmit();
-    }
-  };
- 
   return (
     <Fragment>
-      
-        <Stack spacing={1}>
-          <CommonInput
-            placeholder="First Name"
-            label="First Name"
-            name="first_name"
-            value={values.first_name}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            error={touched.first_name && errors.first_name}
-          />
-          <CommonInput
-            placeholder="Last Name"
-            label="Last Name"
-            name="last_name"
-            value={values.last_name}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            error={touched.last_name && errors.last_name}
-          />
-          <CommonInput
-            placeholder="Email"
-            label="Email"
-            type="email"
-            name="email"
-            value={values.email}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            error={touched.email && errors.email}
-          />
-          <CommonInput
-            placeholder="Password"
-            label="Password"
-            type="password"
-            name="password"
-            value={values.password}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            error={touched.password && errors.password}
-          />
-          <CommonInput
-            placeholder="Confirm Password"
-            label="Confirm Password"
-            type="password"
-            name="confirm_password"
-            value={values.confirm_password}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            error={touched.confirm_password && errors.confirm_password}
-          />
-          {/* <CommonSelect
-          label="Select Role"
-          options={ROLESLIST}
+      <Stack spacing={1}>
+        <CommonInput
+          name="first_name"
+          label="First Name"
+          placeholder="First Name"
+          value={values.first_name}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          error={touched.first_name && errors.first_name}
+        />
+        <CommonInput
+          name="last_name"
+          label="Last Name"
+          placeholder="Last Name"
+          value={values.last_name}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          error={touched.last_name && errors.last_name}
+        />
+        <CommonInput
+          name="email"
+          label="Email"
+          type="email"
+          placeholder="Email"
+          value={values.email}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          error={touched.email && errors.email}
+        />
+        <CommonInput
+          name="password"
+          label="Password"
+          type="password"
+          placeholder="Password"
+          value={values.password}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          error={touched.password && errors.password}
+        />
+        <CommonInput
+          name="confirm_password"
+          label="Confirm Password"
+          type="password"
+          placeholder="Confirm Password"
+          value={values.confirm_password}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          error={touched.confirm_password && errors.confirm_password}
+        />
+        <CommonSelect
           name="role"
+          label="Role"
+          placeholder="Select Role"
+          options={ROLES_LIST}
           value={values.role}
           onChange={handleChange}
           onBlur={handleBlur}
           error={touched.role && errors.role}
-        /> */}
-        </Stack>
-        <Stack>
-          <CommonButton title="Create Account" size="large" width="100%" onClick={handleSignup}/>
-        </Stack>
-
+        />
+      </Stack>
+      <CommonButton
+        title="Create Account"
+        size="large"
+        onClick={handleSubmit}
+        // sx={{ marginTop: "4px" }}
+        // loading={true}
+        // disabled={true}
+      />
     </Fragment>
   );
 };

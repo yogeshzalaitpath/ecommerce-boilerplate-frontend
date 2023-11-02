@@ -6,7 +6,7 @@ import { IMAGES } from "@/assets";
 export default function AuthLayout({ children }) {
   return (
     <Fragment>
-      <Grid container minHeight="100vh">
+      <Grid container sx={{ minHeight: "100vh" }}>
         <Grid
           item
           xs={12}
@@ -15,20 +15,25 @@ export default function AuthLayout({ children }) {
         >
           {children}
         </Grid>
-        <Grid item lg={5} sx={{ display: { xs: "none", lg: "block" } }}>
-          <div
+        <Grid
+          item
+          lg={5}
+          sx={{
+            display: { xs: "none", lg: "block" },
+          }}
+        >
+          <Image
+            src={IMAGES.authCover}
+            alt="Auth Cover"
             style={{
-              position: "relative",
-              height: "100vh",
+              height: "100%",
+              width: "100%",
+              objectFit: "cover",
+              objectPosition: "right",
+              marginBottom: "-4px",
             }}
-          >
-            <Image
-              src={IMAGES.authcover}
-              alt="Description"
-              layout="fill"
-              style={{ objectFit: "cover", height: "100%", width: "100%" }}
-            />
-          </div>
+            priority={true}
+          />
         </Grid>
       </Grid>
     </Fragment>

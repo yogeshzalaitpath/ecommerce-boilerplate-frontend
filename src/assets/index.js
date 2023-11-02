@@ -1,4 +1,4 @@
-import authCover from "@/assets/images/auth-cover.jpg"
+import authCover from "@/assets/images/auth-cover.webp";
 
 import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettingsOutlined";
 import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";

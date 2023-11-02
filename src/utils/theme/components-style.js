@@ -11,12 +11,10 @@ export const componentsStyle = (theme) => {
         },
       },
     },
-    MuiTextField: {
+    MuiFormHelperText: {
       styleOverrides: {
         root: {
-          ".MuiFormHelperText-root": {
-            marginLeft: "0px",
-          },
+          marginLeft: "0px",
         },
       },
     },
